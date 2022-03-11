@@ -31,6 +31,6 @@ def main(data,key,action,result):
         else:
             result += letter
 
-    print(f"{result}")
+    print(result)
 
 intro()

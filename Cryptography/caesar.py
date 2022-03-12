@@ -9,7 +9,7 @@ def syntax():
 
 def intro():
     try:
-        data = open(sys.argv[1], 'r').read().lower()
+        data = open(sys.argv[1], "r").read().lower()
         key = int(sys.argv[2])
         action = sys.argv[3]
         result = ""

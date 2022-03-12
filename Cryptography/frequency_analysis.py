@@ -9,9 +9,9 @@ def syntax():
 
 def intro():
     try:
-        english_freq = "etaoinshrdlcumwfgypbvkjxqz"
+        english_freq = "etaoinsrhdlucmfywgpbvkxqjz"
         letter_count = {'a': 0, 'b': 0, 'c': 0, 'd': 0, 'e': 0, 'f': 0, 'g': 0, 'h': 0, 'i': 0, 'j': 0, 'k': 0, 'l': 0, 'm': 0, 'n': 0, 'o': 0, 'p': 0, 'q': 0, 'r': 0, 's': 0, 't': 0, 'u': 0, 'v': 0, 'w': 0, 'x': 0, 'y': 0, 'z': 0}
-        data = open(sys.argv[1], 'r').read().lower()
+        data = open(sys.argv[1], "r").read().lower()
         main(english_freq,letter_count,data)
     except IndexError:
         syntax()
@@ -29,6 +29,17 @@ def main(english_freq,letter_count,data):
         order.append(item)
     order = ''.join(order)
 
-    print(f"\n[>] English: {english_freq}\n[>] Results: {order}")
+    outfile = open("results.txt", "w")  
+    result = ""
+    for x in data:
+        if x in low:
+            value_data = order.find(x)
+            result += english_freq[value_data]
+        else:
+            result += x
     
+    savefile = outfile.write(result)
+    print(f"\n[>] English: {english_freq}\n[>] Results: {order}")
+    print("\n[>] Converted text saved into 'results.txt'")
+
 intro()

@@ -2,7 +2,7 @@ import sys
 from string import ascii_lowercase as low
 
 try:
-    data = open(sys.argv[1], 'r').read().lower()
+    data = open(sys.argv[1], "r").read().lower()
 except IndexError:
     print(f"\n [>] Syntax Error: python {sys.argv[0]} <text file>")
     print(f" [>] Example: python {sys.argv[0]} encrypted.txt")
@@ -13,7 +13,7 @@ except FileNotFoundError:
     quit()
 
 for key in range(1,26):
-    result = ''
+    result = ""
     print(f"\n[>] Key: {key}")
 
     for letter in data:

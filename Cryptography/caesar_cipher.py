@@ -16,6 +16,11 @@ def intro():
         main(data,key,action,result)
     except IndexError:
         syntax()
+    except ValueError:
+        syntax()
+    except FileNotFoundError:
+        print(f"\n [>] File '{sys.argv[1]}' not found!")
+        quit() 
 
 def main(data,key,action,result):
     for letter in data:

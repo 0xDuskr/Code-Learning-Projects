@@ -5,18 +5,23 @@ The function decides whether or not the given number is inside the list and retu
 
 import random
 
-num_list =[]
+def generator():
+    num = random.randint(1,30)
+    
+    num_list =[]
+    while len(num_list) != 5:
+        num_list.append(random.randint(1,30))
+    num_list.sort()
+    printer(num,num_list)
 
-while len(num_list) != 5:
-    num_list.append(random.randint(1,30))
+def printer(num,num_list):
+    print(num_list)
+    print(num)
 
-num_list.sort()
-num = random.randint(1,30)
+    if num in num_list:
+        print(True)
+    else:
+        print(False)
 
-print(num_list)
-print(num)
-
-if num in num_list:
-    print(True)
-else:
-    print(False)
+if __name__=="__main__":
+    generator()
